@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-slate-200 dark:border-slate-700;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-blue-900 text-slate-900 dark:text-slate-100;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/10 dark:bg-slate-800/10 backdrop-blur-md border border-white/20 dark:border-slate-700/20 shadow-glass;
+  }
+  
+  .glass-card-inset {
+    @apply bg-white/5 dark:bg-slate-800/5 backdrop-blur-sm border border-white/10 dark:border-slate-700/10 shadow-glass-inset;
+  }
+  
+  .avatar-card {
+    @apply glass-card rounded-2xl p-6 transition-all duration-300 cursor-pointer;
+  }
+  
+  .avatar-card:hover {
+    @apply transform scale-105 shadow-xl;
+  }
+  
+  .avatar-card.selected {
+    @apply ring-2 ring-primary-500 ring-opacity-50 shadow-2xl;
+  }
+  
+  .upload-zone {
+    @apply glass-card rounded-3xl border-2 border-dashed border-slate-300 dark:border-slate-600 transition-all duration-300;
+  }
+  
+  .upload-zone.drag-over {
+    @apply border-primary-500 bg-primary-50/50 dark:bg-primary-900/20;
+  }
+  
+  .voice-panel {
+    @apply glass-card rounded-2xl p-4 shadow-2xl;
+  }
+  
+  .waveform-bar {
+    @apply bg-gradient-to-t from-primary-500 to-primary-300 rounded-full transition-all duration-150;
+  }
+  
+  .waveform-bar.professor {
+    @apply from-professor-500 to-professor-300;
+  }
+  
+  .waveform-bar.journalist {
+    @apply from-journalist-500 to-journalist-300;
+  }
+  
+  .waveform-bar.narrator {
+    @apply from-narrator-500 to-narrator-300;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-slate-200 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-900 dark:text-slate-100 px-4 py-2 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2;
+  }
+  
+  .input-field {
+    @apply w-full px-3 py-2 bg-white/50 dark:bg-slate-800/50 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+  }
+  
+  .sidebar {
+    @apply glass-card rounded-r-2xl border-r border-white/20 dark:border-slate-700/20;
+  }
+  
+  .modal-overlay {
+    @apply fixed inset-0 bg-black/50 backdrop-blur-sm z-50;
+  }
+  
+  .modal-content {
+    @apply glass-card rounded-2xl p-6 max-w-md mx-auto mt-20 shadow-2xl;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .animate-wave {
+    animation: wave 1.5s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+}
